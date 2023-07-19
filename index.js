@@ -591,7 +591,7 @@ import { ztGantt } from 'zt-gantt';
     if (event.target.checked) {
       cssStyle = document.createElement('link');
       cssStyle.setAttribute('rel', 'stylesheet');
-      cssStyle.setAttribute('href', './theme/dark.css');
+      cssStyle.setAttribute('href', 'zt-gantt/public/theme/dark.css');
       document.getElementsByTagName('head')[0].append(cssStyle);
 
       root.style.setProperty('--bg-color', '#333332');
