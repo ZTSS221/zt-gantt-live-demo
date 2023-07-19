@@ -1,3 +1,3 @@
 # zt-gantt-live-demo
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/js-bdaa47)
+Live demo of [zt-gantt](https://github.com/zehntech/zt-gantt) library.
