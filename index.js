@@ -2,6 +2,7 @@
 import './style.css';
 import 'zt-gantt/public/gantt.css';
 import 'zt-gantt/public/gantt.js';
+// import 'zt-gantt/public/theme/dark.css';
 import { ztGantt } from 'zt-gantt';
 
 (function (w) {
