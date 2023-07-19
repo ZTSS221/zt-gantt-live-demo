@@ -1,1 +1,121 @@
 <div id="app"></div>
+<div class="d-flex action-container">
+  <div class="collapse-container">
+    <span>Collapse</span>
+    <input
+      type="checkbox"
+      id="collapse-switch"
+      onchange="changeCollapse(event)"
+    />
+    <label for="collapse-switch">collapse</label>
+  </div>
+
+  <div class="collapse-container">
+    <span>Today</span>
+    <input
+      type="checkbox"
+      id="today-switch"
+      checked="true"
+      onchange="changeToday(event)"
+    />
+    <label for="today-switch">Today</label>
+  </div>
+  <div class="export-data">
+    <select
+      class="export"
+      id="export"
+      placeholder="Export"
+      onchange="exportChange(event)"
+    >
+      <option value="" disabled="" selected="">Export</option>
+      <option value="png">Export To PNG</option>
+      <option value="pdf">Export To PDF</option>
+      <option value="excel">Export To Excel</option>
+    </select>
+  </div>
+  <div class="fullscreen">
+    <button class="btn" onclick="changeScreen()">FullScreen</button>
+  </div>
+  <div class="auto-scheduling">
+    <!-- <span class="coming-soon">coming soon</span> -->
+    <button class="btn" onclick="autoScheduling()">Auto Scheduling</button>
+  </div>
+  <div class="zoom">
+    <select
+      class="scale-zoom"
+      id="scale_zoom"
+      placeholder="Zoom to"
+      onchange="changeZoom(event)"
+    >
+      <option value="" disabled="" selected="">Zoom to:</option>
+      <option value="year">Years</option>
+      <option value="quarter">Quarters</option>
+      <option value="month">Months</option>
+      <option value="week">Weeks</option>
+      <option value="day">Days</option>
+      <option value="hour">Hour</option>
+    </select>
+  </div>
+  <div class="Language">
+    <select
+      class="lang"
+      id="lang"
+      placeholder="Select Language"
+      onchange="changeLang(event)"
+    >
+      <option value="" disabled="" selected="">Select Language:</option>
+      <option value="ar">Arabic</option>
+      <option value="be">Belarusian</option>
+      <option value="en">English</option>
+      <option value="ca">Catalan</option>
+      <option value="cn">Chinese</option>
+      <option value="hr">Croatian</option>
+      <option value="cs">Czech</option>
+      <option value="da">Danish</option>
+      <option value="nl">Dutch</option>
+      <option value="fi">Finnish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="el">Greek</option>
+      <option value="he">Hebrew</option>
+      <option value="hi">Hindi (India)</option>
+      <option value="hu">Hungarian</option>
+      <option value="id">Indonesian</option>
+      <option value="it">Italian</option>
+      <option value="ja">Japanese</option>
+      <option value="kr">Korean</option>
+      <option value="no">Norwegian</option>
+      <option value="fa">Persian</option>
+      <option value="pl">Polish</option>
+      <option value="pt">Portuguese</option>
+      <option value="ro">Romanian</option>
+      <option value="ro">Russian</option>
+      <option value="sk">Slovak</option>
+      <option value="si">Slovenian</option>
+      <option value="es">Spanish</option>
+      <option value="sv">Swedish</option>
+      <option value="tr">Turkish</option>
+      <option value="ua">Ukrainian</option>
+    </select>
+  </div>
+  <span>Dark Mode</span>
+  <input
+    type="checkbox"
+    id="toggle"
+    onchange="changeTheme(event)"
+    class="toggle--checkbox"
+  />
+  <label for="toggle" class="toggle-theme"> </label>
+  <!-- <button onclick="ZT_Gantt.destroy()">destroy</button>
+  <button onclick="ZT_Gantt.render()">render</button> -->
+  <!-- <button onclick="addCol()">Add Column</button>
+  <button onclick="removeCol()">Remove Column</button> -->
+  <input
+    type="search"
+    placeholder="Search Task"
+    id="gantt-search"
+    name="gantt-search"
+    class="gantt-search"
+    onkeyup="searchTask(event)"
+  />
+</div>

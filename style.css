@@ -148,7 +148,7 @@ input[type='checkbox'] {
 .gantt-search {
   position: absolute;
   right: 10px;
-  float: right;
+  bottom: 20px;
 }
 
 .coming-soon {
