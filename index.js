@@ -433,6 +433,8 @@ import { ztGantt } from 'zt-gantt';
   // render gantt
   ZT_Gantt.render();
 
+  const ztGanttTheme = localStorage.getItem('ztGantt-theme');
+
   // console.log(ZT_Gantt);
 
   // to find task in gantt
@@ -587,28 +589,36 @@ import { ztGantt } from 'zt-gantt';
   }
 
   let cssStyle;
-  let root = document.querySelector(':root');
-  function changeTheme(event) {
-    if (event.target.checked) {
+
+  function changeTheme(isDark) {
+    const root = document.querySelector(':root');
+    if (isDark) {
+      document.getElementById('toggle').checked = true;
       cssStyle = document.createElement('link');
       cssStyle.setAttribute('rel', 'stylesheet');
       cssStyle.setAttribute('href', 'zt-gantt/public/theme/dark.css');
       document.getElementsByTagName('head')[0].append(cssStyle);
+      localStorage.setItem('ztGantt-theme', 'dark');
 
       root.style.setProperty('--bg-color', '#333332');
       root.style.setProperty('--text-color', '#fff');
-      root.style.setProperty('--text-secondary-color', '#333332');
+      root.style.setProperty('--text-secondary-color', '#fff');
       root.style.setProperty('--index-primary-color', '#1395BE');
       root.style.setProperty('--index-primary-hover-color', '#0E7595');
     } else {
-      cssStyle.remove();
+      if (cssStyle) {
+        cssStyle.remove();
+      }
       root.style.setProperty('--bg-color', '#fff');
       root.style.setProperty('--text-color', '#000');
       root.style.setProperty('--text-secondary-color', '#fff');
       root.style.setProperty('--index-primary-color', '#4ca0fff2');
       root.style.setProperty('--index-primary-hover-color', '#3585e0f2');
+      localStorage.setItem('ztGantt-theme', 'light');
     }
   }
+
+  changeTheme(ztGanttTheme == 'dark');
 
   function searchTask(e) {
     let isFilter = e.target.value.trim() !== '';
